@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "addPaymentMethod",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "paymentMethodId",
+						"type": "uint256"
+					}
+				],
+				"name": "deactivatePaymentMethod",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/iPaymentMethods.sol": "IPaymentMethodsContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/iPaymentMethods.sol": {
+			"keccak256": "0x997bcc6fe5fd6713efadc683a7370549c4341eaa07efb823b59cdaf00502cbcf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2773850c7a52171ea2b1336fa7531561005408c863222d8845b4e09f069ed3b4",
+				"dweb:/ipfs/QmNQrjRq2G5W27ECwzjfpD2S1jHw2G575CTQiH9oQ7W77s"
+			]
+		}
+	},
+	"version": 1
+}

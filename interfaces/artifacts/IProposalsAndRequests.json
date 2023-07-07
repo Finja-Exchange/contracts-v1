@@ -1,0 +1,523 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"acceptBuyerRequest(uint256,uint256,uint256)": "100fe0ef",
+			"changeProposalAndRequestDataUponCryptoRelease(uint256,uint256,uint256)": "e08169a5",
+			"confirmFiatPayment(uint256,uint256)": "3b3f573a",
+			"createProposal(uint256,uint256,string,bytes32,string,string,address,uint256,uint256)": "8de7065c",
+			"deactivateBuyerRequest(uint256,uint256)": "dbc718bd",
+			"deactivateProposal(uint256)": "6bff47e6",
+			"getBuyerRequest(uint256,uint256)": "b8606718",
+			"getProposal(uint256)": "c7f758a8",
+			"getProposalCount()": "c08cc02d",
+			"getRequestCountByProposal(uint256)": "535e4bd6",
+			"processCancellation(uint256,uint256)": "306975a0",
+			"recordDisputeCreation(uint256,uint256)": "53b03389",
+			"recordEscrowReleaseAfterDispute(uint256,uint256,uint256)": "61ef719c",
+			"recordRequestCancellation(uint256,uint256,bool)": "03f0610d",
+			"requestToBuy(uint256,uint256,address)": "cf2b98a5"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "acceptBuyerRequest",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "changeProposalAndRequestDataUponCryptoRelease",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "confirmFiatPayment",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "price",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "paymentMethodName",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "paymentDetails",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "string",
+					"name": "comment",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "username",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "sellerTransactionsCountasSeller",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "sellerTransactionsCountasBuyer",
+					"type": "uint256"
+				}
+			],
+			"name": "createProposal",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "deactivateBuyerRequest",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				}
+			],
+			"name": "deactivateProposal",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "getBuyerRequest",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "buyerRequestIndex",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "proposalId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "amount",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "date",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "buyer",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "accepted",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "paymentDeclared",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "transactionCompleted",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "buyerRequestedtoCancel",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "sellerRequestedtoCancel",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "disputeCreated",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "active",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct IProposalsAndRequests.BuyerRequest",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				}
+			],
+			"name": "getProposal",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "amount",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "escrowBalance",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "price",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "date",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "paymentMethodName",
+							"type": "string"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "paymentDetails",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "string",
+							"name": "comment",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "username",
+							"type": "string"
+						},
+						{
+							"internalType": "bool",
+							"name": "active",
+							"type": "bool"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "sellerTransactionsCountasSeller",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "sellerTransactionsCountasBuyer",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IProposalsAndRequests.Proposal",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getProposalCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				}
+			],
+			"name": "getRequestCountByProposal",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "processCancellation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "recordDisputeCreation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "recordEscrowReleaseAfterDispute",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "buyerRequestIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "requestedByBuyer",
+					"type": "bool"
+				}
+			],
+			"name": "recordRequestCancellation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "buyer",
+					"type": "address"
+				}
+			],
+			"name": "requestToBuy",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

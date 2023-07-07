@@ -1,0 +1,684 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_finjaTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "_USDCTokenInstance",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_paymentMethodsContractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_completedTransactions",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "proposalID",
+						"type": "uint256"
+					}
+				],
+				"name": "newBuyerRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "proposalID",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "requestStatusChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "USDCTokenInstance",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "acceptBuyerRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "checkMsgSenderRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "checkProposalAndRequestActive",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "commission",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "completedTransactionsContract",
+				"outputs": [
+					{
+						"internalType": "contract ICompletedTransactions",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmFiatPayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "createDispute",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paymentMethodIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "paymentDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "comment",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					}
+				],
+				"name": "createProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "deactivateBuyerRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "deactivateProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "disputeResolutionContract",
+				"outputs": [
+					{
+						"internalType": "contract IDisputeResolution",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "finjaTokenInstance",
+				"outputs": [
+					{
+						"internalType": "contract IFinjaToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProposalCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestCountByProposal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paymentMethodsContract",
+				"outputs": [
+					{
+						"internalType": "contract IPaymentMethods",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proposalsAndRequestsContract",
+				"outputs": [
+					{
+						"internalType": "contract IProposalsAndRequests",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "releaseCrypto",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "winner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "releaseEscrowAfterDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "buyerRequestIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "requestCancellation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "requestToBuy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_commission",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_rewardAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "setCommissionAndReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_disputeResolutionAddress",
+						"type": "address"
+					}
+				],
+				"name": "setDisputeResolutionContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_proposalsAndRequestsContract",
+						"type": "address"
+					}
+				],
+				"name": "setProposalsAndRequestsContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferCryptoToEscrow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/escrow.sol": "Main"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65",
+				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
+			]
+		},
+		"contracts/escrow.sol": {
+			"keccak256": "0x7288af189fe90f4334356797515d0d58cd1b74455de7574a5b3eb5b8fafbc5cc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d08302ed873696bd8553c1158032e3d5b68f43df2075dce8b1ab77f83b438337",
+				"dweb:/ipfs/QmQDbovyKonDtE2wXePn72UbFUDtmzQ8mpg8dZJKdgdMqy"
+			]
+		},
+		"contracts/interfaces/IDisputeResolution.sol": {
+			"keccak256": "0xa28e426d6624b0810cf8b81863ba759bb1019153c6b55cdf2c3667e74345183f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d23c2bc96fae07d83162bf475cbffbe582c8f0e22dab36224b974a0c93e25d04",
+				"dweb:/ipfs/QmWuPTb1izUqfNd4brepRkAZH6FqWNFmxsN9tXTZPs26c8"
+			]
+		},
+		"contracts/interfaces/iCompletedTransactions.sol": {
+			"keccak256": "0xf51b0540551911ce82a6a1fe4eb2af9768487c623f5b0eb20e3eaf2269bf24a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f1554a01c1432771267f09b7fd08cb558926edbf8706592c09a31ca75a62dfb1",
+				"dweb:/ipfs/QmZWmAHbPQdm4TfLZi9wUajCwJdCQuof92z18BJ8zRYgfE"
+			]
+		},
+		"contracts/interfaces/iFinjaToken.sol": {
+			"keccak256": "0xc77c71fdbdb346a402af256c2f4c21eabebf5031cf438d6a424d0070f1adb20a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://88bc697b812ccd42d59f2d2a7e707fdef7b671a07ee5cba64a68b4cdc69cbbd2",
+				"dweb:/ipfs/QmQNsz4oEwn6RybKyqqPUcFxvFUnKnGzxyeRGxjfukgjQM"
+			]
+		},
+		"contracts/interfaces/iPaymentMethods.sol": {
+			"keccak256": "0x5340513a5458d705a78055b1d1602c74368e137f18ae073ebffa0fcd71fec6e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb2af8efb4fd981cff18dcfd1e930b695fa9d505b5744dd5b0f57f57672e15a1",
+				"dweb:/ipfs/QmUnP9W9wNFtbggoEquMntN84uxM1fa6fmbdNkEiAHXECn"
+			]
+		},
+		"contracts/interfaces/iProposalsAndRequests.sol": {
+			"keccak256": "0x9c04b407f23dabd01443d58a4f357df6dc2bda49ed821cc787207184187dc817",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6c618de955ce9caadc12943ff0248a5db3c6370166ae85c55000eefaa8253085",
+				"dweb:/ipfs/QmTZ8DbUtWnHyk48QPiWJfcmbVFy3Eeyg6QV7rfskFduAH"
+			]
+		}
+	},
+	"version": 1
+}
